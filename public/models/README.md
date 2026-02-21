@@ -1,75 +1,21 @@
-# Avatar Models
+# Avatar Models (GLB)
 
-Esta carpeta contiene los modelos 3D (GLB) de Ready Player Me para cada agente.
+This folder holds the 3D avatar models for the Office 3D view.
+Each file is named after the agent's workspace ID (e.g. `main.glb`, `studio.glb`).
 
-## Nombres de archivo esperados
+## How to add your own models
 
-Cada archivo debe nombrarse según el `id` del agente (ver `agentsConfig.ts`):
-
-- `main.glb` - 🦞 Tenacitas (COO)
-- `academic.glb` - 🎓 Profe (Docencia)
-- `studio.glb` - 🎬 Studio (YouTube)
-- `linkedin.glb` - 💼 LinkedIn Pro
-- `social.glb` - 📱 Social (IG, X, TikTok)
-- `infra.glb` - 🔧 Infra (DevOps)
-
-## Cómo obtener los modelos
-
-1. Ve a https://readyplayer.me/avatar
-2. Crea un avatar para cada agente
-3. Descarga como GLB
-4. Renombra según la lista de arriba
-5. Coloca en esta carpeta
-
-## Características recomendadas por agente
-
-### 🦞 Tenacitas (main.glb)
-- Look: Profesional tech, COO ejecutivo
-- Ropa: Camisa casual-formal, sin corbata
-- Vibe: Líder, decisivo, organizado
-
-### 🎓 Profe (academic.glb)
-- Look: Profesor universitario
-- Ropa: Camisa + chaleco o blazer
-- Accesorios: Gafas (opcional)
-- Vibe: Intelectual, pedagógico
-
-### 🎬 Studio (studio.glb)
-- Look: Creador de contenido, YouTuber
-- Ropa: Casual moderno, hoodie o camiseta
-- Accesorios: Auriculares alrededor del cuello
-- Vibe: Creativo, dinámico
-
-### 💼 LinkedIn Pro (linkedin.glb)
-- Look: Ejecutivo corporativo
-- Ropa: Traje completo o camisa formal
-- Vibe: Profesional, pulido, networking
-
-### 📱 Social (social.glb)
-- Look: Trendy, social media manager
-- Ropa: Moderna, streetwear chic
-- Vibe: Joven, conectado, cool
-
-### 🔧 Infra (infra.glb)
-- Look: DevOps engineer, SysAdmin
-- Ropa: Camiseta tech, hoodie
-- Accesorios: Auriculares gaming
-- Vibe: Técnico, hackerista
+1. Go to https://readyplayer.me/avatar and create an avatar
+2. Export as **GLB**
+3. Rename the file to match your agent's workspace ID (see `agentsConfig.ts`)
+4. Place it in this folder
 
 ## Fallback
 
-Si un archivo GLB no existe, el sistema usará una esfera de color como placeholder.
+If a GLB file is not found for an agent, the system displays a colored sphere as placeholder.
 
-## Formato
+## Recommended format
 
-- **Formato:** GLB (binary GLTF)
-- **Tamaño recomendado:** < 5MB por modelo
-- **Optimización:** Ready Player Me exporta modelos optimizados para web
-
-## Animaciones (futuro)
-
-Los modelos de Ready Player Me incluyen rigging automático. En fases futuras se añadirán animaciones:
-- Idle (respiración)
-- Typing (teclear)
-- Thinking (pensativo)
-- Error (frustración)
+- **Format:** GLB (binary GLTF)
+- **Max size:** < 5 MB per model
+- Ready Player Me exports web-optimized models by default

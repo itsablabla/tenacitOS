@@ -25,19 +25,15 @@ interface Agent {
   activeSessions: number;
 }
 
-// Default fallback config (can be overridden by agent's own config in openclaw.json)
+// Fallback config used when an agent doesn't define its own ui config in openclaw.json.
+// The main agent reads name/emoji from env vars; all others fall back to generic defaults.
+// Override via each agent's openclaw.json → ui.emoji / ui.color / name fields.
 const DEFAULT_AGENT_CONFIG: Record<string, { emoji: string; color: string; name?: string }> = {
   main: {
-    emoji: process.env.NEXT_PUBLIC_AGENT_EMOJI || "🦞",
+    emoji: process.env.NEXT_PUBLIC_AGENT_EMOJI || "🤖",
     color: "#ff6b35",
-    name: process.env.NEXT_PUBLIC_AGENT_NAME || "Mission Control"
+    name: process.env.NEXT_PUBLIC_AGENT_NAME || "Mission Control",
   },
-  academic: { emoji: "🎓", color: "#4ade80", name: "Profe" },
-  freelance: { emoji: "💼", color: "#10b981", name: "DevClaw" },
-  infra: { emoji: "🔧", color: "#f97316", name: "Infra" },
-  studio: { emoji: "🎬", color: "#a855f7", name: "Studio" },
-  social: { emoji: "📱", color: "#ec4899", name: "Social" },
-  linkedin: { emoji: "💼", color: "#0077b5", name: "LinkedIn Pro" },
 };
 
 /**

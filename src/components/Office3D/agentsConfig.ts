@@ -1,64 +1,80 @@
+/**
+ * Office 3D — Agent Configuration
+ *
+ * This file defines the visual layout of agents in the 3D office.
+ * Names, emojis and roles are loaded at runtime from the OpenClaw API
+ * (/api/agents → openclaw.json), so you only need to set positions and colors here.
+ *
+ * Agent IDs correspond to workspace directory suffixes:
+ *   id: "main"     → workspace/          (main agent)
+ *   id: "studio"   → workspace-studio/
+ *   id: "infra"    → workspace-infra/
+ *   etc.
+ *
+ * Add, remove or reposition agents to match your own OpenClaw setup.
+ */
+
 export interface AgentConfig {
   id: string;
   name: string;
   emoji: string;
   position: [number, number, number]; // x, y, z
-  color: string; // color primario del escritorio
+  color: string;
   role: string;
 }
 
 export const AGENTS: AgentConfig[] = [
   {
-    id: 'main',
-    name: process.env.NEXT_PUBLIC_AGENT_NAME || 'Mission Control',
-    emoji: process.env.NEXT_PUBLIC_AGENT_EMOJI || '🦞',
-    position: [0, 0, 0], // Centro, más grande
-    color: '#FFCC00', // Amarillo
-    role: 'COO - Coordinador General',
+    id: "main",
+    name: process.env.NEXT_PUBLIC_AGENT_NAME || "Mission Control",
+    emoji: process.env.NEXT_PUBLIC_AGENT_EMOJI || "🦞",
+    position: [0, 0, 0], // Center — main desk
+    color: "#FFCC00",
+    role: "Main Agent",
   },
   {
-    id: 'academic',
-    name: 'Profe',
-    emoji: '🎓',
-    position: [-4, 0, -3], // Izquierda arriba
-    color: '#4CAF50', // Verde
-    role: 'Docencia Universidad Europea',
+    id: "agent-2",
+    name: "Agent 2",
+    emoji: "🤖",
+    position: [-4, 0, -3],
+    color: "#4CAF50",
+    role: "Sub-agent",
   },
   {
-    id: 'studio',
-    name: 'Studio',
-    emoji: '🎬',
-    position: [4, 0, -3], // Derecha arriba
-    color: '#E91E63', // Rosa/magenta
-    role: 'YouTube - Guiones, SEO, Thumbnails',
+    id: "agent-3",
+    name: "Agent 3",
+    emoji: "🤖",
+    position: [4, 0, -3],
+    color: "#E91E63",
+    role: "Sub-agent",
   },
   {
-    id: 'linkedin',
-    name: 'LinkedIn Pro',
-    emoji: '💼',
-    position: [-4, 0, 3], // Izquierda abajo
-    color: '#0077B5', // Azul LinkedIn
-    role: 'Autoridad en LinkedIn',
+    id: "agent-4",
+    name: "Agent 4",
+    emoji: "🤖",
+    position: [-4, 0, 3],
+    color: "#0077B5",
+    role: "Sub-agent",
   },
   {
-    id: 'social',
-    name: 'Social',
-    emoji: '📱',
-    position: [4, 0, 3], // Derecha abajo
-    color: '#9C27B0', // Púrpura
-    role: 'IG, X, TikTok',
+    id: "agent-5",
+    name: "Agent 5",
+    emoji: "🤖",
+    position: [4, 0, 3],
+    color: "#9C27B0",
+    role: "Sub-agent",
   },
   {
-    id: 'infra',
-    name: 'Infra',
-    emoji: '🔧',
-    position: [0, 0, 6], // Fondo centro
-    color: '#607D8B', // Gris azulado
-    role: 'DevOps, Deploys, PM2, Caddy',
+    id: "agent-6",
+    name: "Agent 6",
+    emoji: "🤖",
+    position: [0, 0, 6],
+    color: "#607D8B",
+    role: "Sub-agent",
   },
 ];
 
-export type AgentStatus = 'idle' | 'working' | 'thinking' | 'error';
+export type AgentStatus = "idle" | "working" | "thinking" | "error";
 
 export interface AgentState {
   id: string;
@@ -67,5 +83,5 @@ export interface AgentState {
   model?: string; // opus, sonnet, haiku
   tokensPerHour?: number;
   tasksInQueue?: number;
-  uptime?: number; // días
+  uptime?: number; // days
 }
