@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.26",
+    "lastTouchedAt": "2026-02-27T23:57:11.791Z"
+  },
+  "env": {
+    "shellEnv": {
+      "enabled": true
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-07T03:36:42.545Z",
+    "lastRunVersion": "2026.2.3-1",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "/Users/jadengarza/ois-agents/jaden-macbook",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "workspace": "/Users/jadengarza/ois-agents/jaden-macbook"
+      },
+      {
+        "id": "jaden-macbook",
+        "name": "jaden-macbook",
+        "workspace": "/Users/jadengarza/ois-agents/jaden-macbook",
+        "agentDir": "/Users/jadengarza/.openclaw/agents/jaden-macbook/agent"
+      },
+      {
+        "id": "research",
+        "name": "research",
+        "workspace": "/Users/jadengarza/ois-agents/research",
+        "agentDir": "/Users/jadengarza/.openclaw/agents/research/agent"
+      },
+      {
+        "id": "devops",
+        "name": "devops",
+        "workspace": "/Users/jadengarza/ois-agents/devops",
+        "agentDir": "/Users/jadengarza/.openclaw/agents/devops/agent"
+      },
+      {
+        "id": "comms",
+        "name": "comms",
+        "workspace": "/Users/jadengarza/ois-agents/comms",
+        "agentDir": "/Users/jadengarza/.openclaw/agents/comms/agent"
+      },
+      {
+        "id": "creative",
+        "name": "creative",
+        "workspace": "/Users/jadengarza/ois-agents/creative",
+        "agentDir": "/Users/jadengarza/.openclaw/agents/creative/agent"
+      },
+      {
+        "id": "ops",
+        "name": "ops",
+        "workspace": "/Users/jadengarza/ois-agents/ops",
+        "agentDir": "/Users/jadengarza/.openclaw/agents/ops/agent"
+      }
+    ]
+  },
+  "tools": {
+    "allow": [
+      ""
+    ],
+    "agentToAgent": {
+      "enabled": true
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "approvals": {
+    "exec": {
+      "enabled": false
+    }
+  },
+  "channels": {
+    "imessage": {
+      "enabled": true,
+      "cliPath": "/Users/jadengarza/bin/imsg",
+      "dbPath": "/Users/jadengarza/Library/Messages/chat.db",
+      "service": "auto",
+      "dmPolicy": "open",
+      "allowFrom": [
+        "*"
+      ],
+      "groupPolicy": "allowlist"
+    },
+    "matrix": {
+      "enabled": true,
+      "homeserver": "http://83.228.193.101:6167",
+      "accessToken": "CBKLQQoaQL1XqJEK7lrYFyuKWsn5OyS6",
+      "dmPolicy": "open",
+      "groupPolicy": "allowlist",
+      "autoJoin": "always",
+      "streamMode": "partial",
+      "groups": {
+        "!wAn6NdNunnvaIeZAgk:os.garzahive.com": {
+          "enabled": true,
+          "requireMention": false
+        }
+      }
+    }
+  },
+  "discovery": {
+    "mdns": {
+      "mode": "full"
+    }
+  },
+  "canvasHost": {
+    "enabled": true
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "controlUi": {
+      "dangerouslyDisableDeviceAuth": true
+    },
+    "auth": {
+      "mode": "token",
+      "token": "macbook-gw-2026"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "memory": {
+    "backend": "builtin",
+    "citations": "auto"
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "matrix": {
+        "enabled": true
+      },
+      "imessage": {
+        "enabled": true
+      }
+    }
+  }
+}
